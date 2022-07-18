@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AlbumInterfaceController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="640.0">
+        <children>
+          <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                  <ListView fx:id="albumPhotoListView" layoutX="13.0" layoutY="48.0" prefHeight="285.0" prefWidth="614.0" />
+                  <MenuButton layoutX="568.0" layoutY="14.0" mnemonicParsing="false" text="Filter">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#filterByDateHandler" text="Search by Date" />
+                      <MenuItem mnemonicParsing="false" onAction="#tagOneButtonHandler" text="Tag Val1" />
+                        <MenuItem mnemonicParsing="false" onAction="#tagOrHandler" text="Tag 1 or Tag 2" />
+                        <MenuItem mnemonicParsing="false" onAction="#tagAndHandler" text="Tag 1 and Tag 2" />
+                        <MenuItem mnemonicParsing="false" onAction="#createFilteredAlbumButtonHandler" text="Create Album (Filtered)" />
+                        <MenuItem fx:id="clearFilterButton" mnemonicParsing="false" onAction="#clearFilterButtonHandler" text="ClearFilters" />
+                    </items>
+                  </MenuButton>
+                  <Button fx:id="BackButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonHandler" text="Back" />
+                  <Button fx:id="LogOutButton" layoutX="518.0" layoutY="344.0" mnemonicParsing="false" onAction="#LogOutButtonHandler" prefHeight="45.0" prefWidth="49.0" text="LOG OUT" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="QuitButton" layoutX="574.0" layoutY="344.0" mnemonicParsing="false" onAction="#QuitButtonHandler" prefHeight="45.0" prefWidth="49.0" text="QUIT" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="AddPhotoButton" layoutX="132.0" layoutY="338.0" mnemonicParsing="false" onAction="#AddButtonHandler" prefHeight="25.0" prefWidth="85.0" text="Add Photo" />
+                  <Button fx:id="DeletePhotoButton" layoutX="132.0" layoutY="363.0" mnemonicParsing="false" onAction="#DeleteButtonHandler" text="Delete Photo" />
+                  <Button fx:id="AddTagButton" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onAction="#addTagHandler" prefHeight="25.0" prefWidth="85.0" text="Add Tag" />
+                  <Button fx:id="DeleteTagButton" layoutX="14.0" layoutY="363.0" mnemonicParsing="false" onAction="#deleteTagHandler" prefHeight="25.0" prefWidth="85.0" text="Delete Tag" />
+                  <Button fx:id="SlideshowButton" layoutX="468.0" layoutY="14.0" mnemonicParsing="false" onAction="#slideshowButtonHandler" prefHeight="25.0" prefWidth="85.0" text="Slideshow" />
+                  <Button fx:id="DisplayButton" layoutX="367.0" layoutY="14.0" mnemonicParsing="false" onAction="#displayButtonHandler" prefHeight="25.0" prefWidth="85.0" text="Display" />
+                  <Button fx:id="MoveFromAlbumButton" layoutX="367.0" layoutY="338.0" mnemonicParsing="false" onAction="#movePhotoHandler" prefHeight="25.0" prefWidth="114.0" text="Move form Album" />
+                  <Button fx:id="CopyFromAlbumButton" layoutX="367.0" layoutY="363.0" mnemonicParsing="false" onAction="#copyPhotoHandler" prefHeight="25.0" prefWidth="114.0" text="Copy from Album" />
+                  <Button fx:id="CaptionButton" layoutX="234.0" layoutY="339.0" mnemonicParsing="false" onAction="#captionButtonHandler" prefHeight="25.0" prefWidth="121.0" text="Caption/ Recaption" wrapText="true" />
+            </children>
+          </AnchorPane>
+        </children>
+      </VBox>
+   </children>
+</AnchorPane>
